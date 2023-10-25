@@ -1,0 +1,24 @@
+.card {
+    width: 175px;
+    font-size: 12px;
+    margin: 0 15px 0 15px;
+}
+
+.card--img {
+    width: 100%;
+    border-radius: 9px;
+}
+
+.card--stats {
+    display: flex;
+    align-items: center;
+}
+
+.card--star {
+    height: 14px;
+}
+
+.card--container {
+    display: flex;
+    margin: 10px 20px 10px 20px;
+}
