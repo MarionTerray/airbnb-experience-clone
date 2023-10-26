@@ -3,19 +3,28 @@ import '../style/Card.css';
 import StarIcon from '../images/StarIcon.png'
 
 function Card(props) {
+    let badgeText
+    if (props.item.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.item.location === 'Online') {
+        badgeText = "ONLINE"
+    }
+
   return (
     <div className='card'>
-        <img className='card--img' src={props.img} />
+        {badgeText && <div className='card--badge'>{badgeText}</div>}
+        <img className='card--img' src={props.item.img} />
         <div className='card--stats'>
             <img className='card--star' src={StarIcon} />
-            <span >{props.rating}</span>
-            <span className='gray'>({props.reviewCount}) -</span>
-            <span className='gray'>{props.country}</span>
+            <span >{props.item.stats.rating}</span>
+            <span className='gray'>({props.item.stats.reviewCount}) -</span>
+            <span className='gray'>{props.item.location}</span>
         </div>
-        <p>{props.title}</p>
-        <p><span className='bold'>From ${props.price}</span> / person</p>
+        <p className='card--title'>{props.item.title}</p>
+        <p><span className='bold'>From ${props.item.price}</span> / person</p>
     </div>
   )
 }
 
 export default Card
+
