@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/Card.css';
-import StarIcon from '../images/StarIcon.png'
+import StarIcon from '../img/StarIcon.png'
 
 function Card(props) {
     let badgeText
